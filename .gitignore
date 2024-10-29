@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*/__pycache/*
+.vscode/*
+!.vscode/launch.json
+.idea/
+*.pdf
+.pylintrc
+/static/
+static/
+media/
+.venv
+*.env
+*log
+*.pfx
