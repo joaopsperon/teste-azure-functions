@@ -1,7 +1,6 @@
 import azure.functions as func
 import logging
-
-from scripts import test_script
+from os import getenv
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
 
@@ -11,7 +10,8 @@ def teste_http_trigger(req: func.HttpRequest) -> func.HttpResponse:
     logging.info("Python HTTP trigger function processed a request.")
 
     name = req.params.get("name")
-    test_script.main()
+    ENVIROMENT_VARIABLE = getenv("ENVIROMENT_VARIABLE_1")
+    logging.info(f"A variavel .env é: {ENVIROMENT_VARIABLE}")
     return func.HttpResponse(
         "This HTTP triggered function executed successfully.",
         status_code=200,
